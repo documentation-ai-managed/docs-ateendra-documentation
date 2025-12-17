@@ -1,0 +1,132 @@
+---
+title: Authentication and Access Management
+description: Learn how to securely access Hexus using API keys, team invitations, and role-based permissions. This ensures safe collaboration across your team.
+---
+
+## Overview
+
+Hexus provides secure authentication through API keys for programmatic access and team invitations for collaborative workspaces. You manage roles like Admin, Editor, and Viewer to control permissions. Follow these steps to set up access and maintain security.
+
+<Callout kind="tip">
+  Store your API keys securely and rotate them regularly to protect your account.
+</Callout>
+
+## Generate API Keys
+
+Create API keys from your Hexus dashboard to authenticate requests to the API.
+
+<Steps>
+  <Step title="Navigate to Settings" icon="settings">
+    Log in to your Hexus account and click your profile icon in the top-right corner.
+    
+    Select **Settings > API Keys**.
+  </Step>
+  <Step title="Create New Key" icon="plus">
+    Click **Generate New Key**.
+    
+    Enter a descriptive name, such as `Production Dashboard Integration`.
+  </Step>
+  <Step title="Copy and Secure" icon="copy">
+    Copy the generated key immediately (format: `hxsk_abc123def456ghi789`).
+    
+    Store it in your secure vault. You cannot view it again after closing the dialog.
+  </Step>
+</Steps>
+
+Use your API key in API requests by adding it to the `Authorization` header.
+
+<CodeGroup tabs="JavaScript,Python,cURL">
+  ```javascript
+  const response = await fetch('https://api.hexus.ai/v1/content/generate', {
+    method: 'POST',
+    headers: {
+      'Authorization': 'Bearer hxsk_abc123def456ghi789',
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({
+      prompt: 'Create a product demo script'
+    })
+  });
+  ```
+  ```python
+  import requests
+
+  headers = {
+      'Authorization': 'Bearer hxsk_abc123def456ghi789',
+      'Content-Type': 'application/json'
+  }
+  response = requests.post(
+      'https://api.hexus.ai/v1/content/generate',
+      headers=headers,
+      json={'prompt': 'Create a product demo script'}
+  )
+  ```
+  ```bash
+  curl -X POST https://api.hexus.ai/v1/content/generate \
+    -H "Authorization: Bearer hxsk_abc123def456ghi789" \
+    -H "Content-Type: application/json" \
+    -d '{"prompt": "Create a product demo script"}'
+  ```
+</CodeGroup>
+
+## Invite Team Members
+
+Add collaborators to your Hexus workspace to enable team-based content creation.
+
+<Steps>
+  <Step title="Access Team Settings" icon="users">
+    Go to **Workspace > Team** in the sidebar.
+  </Step>
+  <Step title="Send Invitation" icon="mail">
+    Click **Invite Member**.
+    
+    Enter the email address and select a role.
+  </Step>
+  <Step title="Confirm Access" icon="check-circle">
+    The invitee receives an email. They accept to join your workspace.
+  </Step>
+</Steps>
+
+## Manage Roles and Permissions
+
+Hexus uses role-based access control (RBAC). Assign roles to control what team members can do.
+
+<Columns cols={3}>
+  <Card title="Admin" icon="shield" horizontal>
+    Full access: Manage users, API keys, billing, and all content.
+  </Card>
+  <Card title="Editor" icon="edit-3" horizontal>
+    Create and edit content, demos, videos. Cannot manage users or billing.
+  </Card>
+  <Card title="Viewer" icon="eye" horizontal>
+    View content only. No edit or delete permissions.
+  </Card>
+</Columns>
+
+<Tabs>
+  <Tab title="Update Role" icon="settings">
+    In **Team** settings, click the role dropdown next to a user and select the new role.
+    
+    Changes apply immediately.
+  </Tab>
+  <Tab title="Remove User" icon="user-x">
+    Click **Remove** next to the user.
+    
+    <Callout kind="alert">
+      Removing a user revokes all access. They lose visibility to workspace content.
+    </Callout>
+  </Tab>
+</Tabs>
+
+<Expandable title="Advanced Permissions" default-open="false">
+  For granular control, use workspace-specific permissions:
+  
+  | Action          | Admin | Editor | Viewer |
+  |-----------------|-------|--------|--------|
+  | Create Content  | ✅    | ✅     | ❌     |
+  | Delete Videos   | ✅    | ✅     | ❌     |
+  | Manage Billing  | ✅    | ❌     | ❌     |
+  | Invite Users    | ✅    | ❌     | ❌     |
+  
+  Customize in **Workspace > Permissions**.
+</Expandable>

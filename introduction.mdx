@@ -1,0 +1,101 @@
+---
+title: Introduction to Hexus
+description: Hexus is an AI-powered platform designed to help teams create high-quality product content such as demos, videos, and guides at scale. This introduction covers the platform's purpose, benefits, and how it transforms product marketing efforts.
+---
+
+## Overview
+
+Hexus empowers your team to generate high-quality product content like interactive demos, polished videos, and comprehensive guides using AI. You scale your marketing efforts without expanding your headcount, producing personalized assets that drive user engagement and conversions. Built for product marketers, Hexus handles everything from script generation to final rendering.
+
+<Columns cols={3}>
+  <Card title="AI-Driven Creation" icon="zap" href="/docs/features/ai-generation">
+    Generate demos and videos from simple prompts in seconds.
+  </Card>
+  <Card title="Team Collaboration" icon="users" href="/docs/features/collaboration">
+    Share, edit, and iterate on content with real-time feedback.
+  </Card>
+  <Card title="Scalable Output" icon="trending-up" href="/docs/features/scaling">
+    Produce hundreds of variants tailored to user segments.
+  </Card>
+</Columns>
+
+## Key Benefits for Teams
+
+You benefit from faster content cycles, reduced production costs, and higher engagement rates. Hexus integrates seamlessly into your workflow, supporting formats like interactive web demos and exportable videos.
+
+<Callout kind="success">
+  Teams using Hexus report 5x faster content creation and 30% higher conversion rates.
+</Callout>
+
+| Benefit | Impact |
+|---------|--------|
+| Speed | Reduce demo production from days to minutes |
+| Cost | Eliminate manual scripting and editing |
+| Personalization | Create segment-specific guides automatically |
+| Quality | AI ensures professional polish every time |
+
+## Common Use Cases
+
+Explore how product marketers apply Hexus daily.
+
+<Tabs>
+  <Tab title="Product Demos" icon="play-circle">
+    Build interactive demos for sales enablement.
+    
+    <Steps>
+      <Step title="Prompt" icon="edit-3">
+        Enter product features and target audience.
+      </Step>
+      <Step title="Generate" icon="zap">
+        AI creates scripts and visuals.
+      </Step>
+      <Step title="Customize" icon="settings">
+        Tweak and embed on your site.
+      </Step>
+    </Steps>
+  </Tab>
+  <Tab title="Video Guides" icon="video">
+    Produce explainer videos for onboarding.
+    
+    ```javascript
+    // Generate video via API
+    const response = await fetch('https://api.hexus.ai/v1/videos', {
+      method: 'POST',
+      headers: { 'Authorization': 'Bearer YOUR_API_KEY' },
+      body: JSON.stringify({
+        prompt: 'Explain login flow for new users',
+        duration: 60,
+        style: 'professional'
+      })
+    });
+    ```
+  </Tab>
+  <Tab title="User Guides" icon="book-open">
+    Auto-generate documentation from product specs.
+    
+    <CodeGroup tabs="JavaScript,Python">
+      ```javascript
+      import { Hexus } from '@hexus/sdk';
+      const hexus = new Hexus({ apiKey: 'YOUR_API_KEY' });
+      const guide = await hexus.guides.create({
+        topic: 'API authentication',
+        audience: 'developers'
+      });
+      ```
+      ```python
+      from hexus import Hexus
+      client = Hexus(api_key="YOUR_API_KEY")
+      guide = client.guides.create(
+          topic="API authentication",
+          audience="developers"
+      )
+      ```
+    </CodeGroup>
+  </Tab>
+</Tabs>
+
+<Expandable title="Advanced Integrations" default-open="false">
+  Connect Hexus to your CRM or CMS for automated workflows. Use webhooks to trigger content generation on user events.
+</Expandable>
+
+Hexus transforms how you approach product marketing by making content creation effortless and scalable. Start with a free trial to experience the difference.

@@ -1,0 +1,97 @@
+---
+title: Quickstart: Getting Started with Hexus
+description: Follow this guide to set up your Hexus account and create your first piece of AI-generated content quickly. Ideal for new users looking to dive in without delay.
+---
+
+## Sign Up and Log In
+
+Get started by creating your Hexus account. Hexus uses email-based authentication for simplicity.
+
+<Steps>
+  <Step title="Visit Hexus" icon="globe">
+    Open your browser and navigate to [hexus.ai](https://hexus.ai).
+  </Step>
+  <Step title="Register" icon="user-plus">
+    Click **Sign Up**. Enter your email, create a strong password, and verify your account via the confirmation email.
+  </Step>
+  <Step title="Log In" icon="log-in">
+    Return to the login page, enter your credentials, and access your dashboard.
+  </Step>
+</Steps>
+
+<Callout kind="tip">
+  Enable two-factor authentication in your account settings for added security.
+</Callout>
+
+## Explore the Dashboard
+
+Once logged in, you land on the main dashboard. It provides quick access to core features.
+
+<Columns cols={3}>
+  <Card title="Content Library" icon="library" href="/docs/library">
+    View and manage all your generated demos, videos, and guides.
+  </Card>
+  <Card title="Create New" icon="plus" href="/docs/create">
+    Start generating new AI-powered content instantly.
+  </Card>
+  <Card title="Analytics" icon="bar-chart-3" href="/docs/analytics">
+    Track engagement metrics for your content.
+  </Card>
+</Columns>
+
+## Create Your First Demo or Video
+
+Choose between creating a demo or video. Both leverage AI to produce professional content from simple inputs.
+
+<Tabs>
+  <Tab title="Interactive Demo" icon="play-circle">
+    <Steps>
+      <Step title="Select Template" icon="layout">
+        Click **Create New** > **Demo**. Pick a product demo template.
+      </Step>
+      <Step title="Input Details" icon="edit-3">
+        Enter your product URL, key features, and target audience.
+      </Step>
+      <Step title="Generate & Publish" icon="zap">
+        Click **Generate**. Preview, then publish or embed.
+      </Step>
+    </Steps>
+  </Tab>
+  <Tab title="Video Guide" icon="video">
+    <Steps>
+      <Step title="Choose Format" icon="film">
+        Select **Create New** > **Video**. Choose tutorial or explainer style.
+      </Step>
+      <Step title="Add Script" icon="file-text">
+        Paste your script or let AI generate one from bullet points.
+      </Step>
+      <Step title="Render & Share" icon="share-2">
+        Render the video, download, or share via link.
+      </Step>
+    </Steps>
+  </Tab>
+</Tabs>
+
+## Embed Your Content
+
+Share your new content by embedding it on your site. Use the generated code snippet.
+
+<CodeGroup tabs="HTML,React">
+```html
+<iframe src="https://hexus.ai/embed/your-demo-id" width="100%" height="500" frameborder="0"></iframe>
+```
+```jsx
+import { HexusEmbed } from '@hexus/embed';
+
+<HexusEmbed demoId="your-demo-id" height={500} />
+```
+</CodeGroup>
+
+<Expandable title="Troubleshooting Common Issues" default-open="false">
+  - **Generation stuck?** Check your quota in settings.
+  - **Embed not loading?** Ensure `your-demo-id` matches the ID from your library.
+</Expandable>
+
+<Callout kind="success">
+  Congratulations! You've created and shared your first AI-generated content with Hexus.
+</Callout>

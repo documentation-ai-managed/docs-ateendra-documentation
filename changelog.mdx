@@ -1,0 +1,122 @@
+---
+title: Changelog
+description: Track the latest updates, new features, and improvements in Hexus. This page lists version history to keep you informed of platform enhancements.
+---
+
+## Overview
+
+Hexus releases updates regularly to enhance your content creation experience. You receive new AI-powered tools, performance improvements, and bug fixes that help you build demos, videos, and guides faster. Review the latest changes below and upgrade to stay current.
+
+<Columns cols={3}>
+  <Card title="Latest Release" icon="zap" href="#v1-3-0">
+    v1.3.0 delivers advanced video editing and collaboration features.
+  </Card>
+  <Card title="Bug Fixes" icon="check-circle" href="#bug-fixes">
+    Recent patches ensure stable performance across all tools.
+  </Card>
+  <Card title="Roadmap" icon="map" href="#upcoming">
+    Preview upcoming AI enhancements and integrations.
+  </Card>
+</Columns>
+
+## Recent Releases
+
+<Update label="2024-10-15" description="v1.3.0" tags={["feature", "improvement"]}>
+
+## New Features
+
+- Introduce AI-powered video clipping: Automatically detect and extract key moments from screen recordings.
+- Add real-time collaboration: Multiple users edit demos simultaneously with live cursors and comments.
+- Integrate custom templates: Upload and share your branded demo templates across teams.
+
+## Improvements
+
+- Boost rendering speed by 40% for high-resolution videos.
+- Enhance script generation with better context awareness for technical products.
+
+</Update>
+
+<Update label="2024-09-20" description="v1.2.0" tags={["feature", "bugfix"]}>
+
+## New Features
+
+- Launch interactive demo builder: Embed hotspots and CTAs directly in videos.
+- Support webhook integrations: Trigger content generation on events like new user signups.
+
+## Bug Fixes
+
+- Resolve export failures for videos over 10 minutes.
+- Fix cursor lag in multi-monitor recording sessions.
+- Correct audio sync issues in generated guides.
+
+</Update>
+
+<Update label="2024-08-10" description="v1.1.0" tags={["breaking", "feature"]}>
+
+## Breaking Changes
+
+- Update API endpoints: Replace `/v1/generate` with `/v2/content` for better scalability.
+
+## New Features
+
+- Add voiceover synthesis in 15 languages.
+- Introduce analytics dashboard: Track demo views and engagement metrics.
+
+## Improvements
+
+- Optimize storage for large asset libraries.
+
+</Update>
+
+## How to Upgrade
+
+Follow these steps to update Hexus and access the latest features.
+
+<Steps>
+  <Step title="Check Current Version" icon="package">
+    Run this command in your terminal:
+    
+    ```bash
+    hexus --version
+    ```
+  </Step>
+  <Step title="Update CLI" icon="download">
+    <CodeGroup tabs="npm,yarn">
+      ```bash
+      npm install -g @hexus/cli@latest
+      ```
+      ```bash
+      yarn global add @hexus/cli@latest
+      ```
+    </CodeGroup>
+  </Step>
+  <Step title="Restart Services" icon="refresh-cw">
+    Restart your Hexus dashboard and verify changes.
+    
+    ```bash
+    hexus restart
+    ```
+  </Step>
+</Steps>
+
+<Callout kind="tip">
+  Enable auto-updates in your account settings to receive new versions without manual intervention. Set `autoUpdate: true` in your config file.
+</Callout>
+
+## Upcoming Changes
+
+<Expandable title="Roadmap Preview" default-open="false">
+
+Hexus plans these enhancements soon:
+
+- Native mobile app for on-the-go editing.
+- Advanced AI analytics for content performance predictions.
+- Integration with popular CMS platforms like WordPress and Shopify.
+
+Stay tuned via the [Hexus blog](https://hexus.ai/blog).
+
+</Expandable>
+
+<Callout kind="info">
+  Found a bug? Report it via the feedback form in your dashboard. Your input shapes future releases.
+</Callout>
